@@ -1,4 +1,4 @@
-# font-spider-shell
+# minimalize-font-cli
 基于font spider的字体压缩CLI  
 author: flymyd
 ## 运行环境
