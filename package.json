@@ -1,0 +1,23 @@
+{
+  "name": "minimalize-font-cli",
+  "version": "1.0.0",
+  "description": "font file minimalizer",
+  "main": "index.js",
+  "scripts": {
+    "compress": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flymyd/minimalize-font-cli.git"
+  },
+  "author": "flymyd",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/flymyd/minimalize-font-cli/issues"
+  },
+  "homepage": "https://github.com/flymyd/minimalize-font-cli#readme",
+  "dependencies": {
+    "font-spider": "^1.3.5",
+    "inquirer": "^8.2.4"
+  }
+}
