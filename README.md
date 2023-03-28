@@ -1,5 +1,6 @@
 # font-spider-shell
-基于font spider的字体压缩CLI
+基于font spider的字体压缩CLI  
+author: flymyd
 ## 运行环境
 Node.js 14或更高
 ## 初始化
