@@ -1,6 +1,6 @@
 {
   "name": "minimalize-font-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "font file minimalizer",
   "main": "index.js",
   "bin": {
