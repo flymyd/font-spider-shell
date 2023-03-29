@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "font file minimalizer",
   "main": "index.js",
+  "bin": {
+    "compress-font": "./index.js"
+  },
   "scripts": {
     "compress": "node index.js"
   },

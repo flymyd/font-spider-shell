@@ -1,14 +1,13 @@
 # minimalize-font-cli
-基于font spider的字体压缩CLI  
-author: flymyd
-## 运行环境
-Node.js 14或更高
-## 初始化
+A font compress(minimalize) cli which based on font-spider
+基于font-spider的字体压缩CLI
+
+## Install
 ```powershell
-npm i
+npm i -g minimalize-font-cli
 ```
-## 使用方法
-将待压缩的字体拷贝到该工程目录下，注意字体仅支持ttf格式！
-执行`npm run compress`或`node index.js`即可。
+## How-to-use
+run `compress-font` in the font directory that needs to be compressed.
+在需要压缩的字体目录下执行`compress-font`即可
 
 

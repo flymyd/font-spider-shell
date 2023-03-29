@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const fs = require('fs');
 const path = require('path');
 const inquirer = require("inquirer");
@@ -6,7 +8,7 @@ inquirer.prompt([
   {
     type: "input",
     name: "fontName",
-    message: "请输入根目录下的字体文件名，仅支持ttf格式，如：font.ttf",
+    message: "请输入根目录下的字体文件名，仅支持ttf格式，如：font.ttf > ",
     default: "font.ttf",
     validate: function (value) {
       if (/^[^\\/:*?"<>|\r\n]+\.ttf$/.test(value)) {
@@ -18,12 +20,12 @@ inquirer.prompt([
   {
     type: "input",
     name: "userCustomWords",
-    message: "请输入需要自定义提取的字符",
+    message: "请输入需要自定义提取的字符 > ",
   },
   {
     type: "checkbox",
     name: "wordDict",
-    message: "请选择要附加的常见字符集",
+    message: "请选择要附加的常见字符集 > ",
     choices: [
       {
         name: "1000字",
@@ -42,7 +44,7 @@ inquirer.prompt([
   {
     type: "list",
     name: "isBackup",
-    message: "压缩后是否保留原字体文件",
+    message: "压缩后是否保留原字体文件 > ",
     choices: [
       {
         name: "是",
@@ -58,7 +60,7 @@ inquirer.prompt([
 ]).then(answers => {
   const {fontName, userCustomWords, wordDict, isBackup} = answers;
   const dictResult = wordDict.map(k => {
-    return fs.readFileSync(path.join('./dict', `${k}.txt`), 'utf-8');
+    return fs.readFileSync(path.join(__dirname, 'dict/', `${k}.txt`), 'utf-8');
   }).join("")
   const htmlTemplate = `
     <!DOCTYPE html><html><body>
@@ -84,10 +86,10 @@ inquirer.prompt([
         console.log("正在清理...")
         try {
           fs.rmSync(htmlPath)
-          const resultFilePath = path.join(__dirname, fontName)
+          const resultFilePath = path.join('./', fontName)
           console.log(`打包成功！压缩后的字体路径为${resultFilePath}`)
           if (isBackup) {
-            console.log(`原字体备份路径为${path.join(__dirname, ".font-spider/", fontName)}`)
+            console.log(`原字体备份路径为${path.join('./', ".font-spider/", fontName)}`)
           }
         } catch (err) {
           console.error("清理失败！")
