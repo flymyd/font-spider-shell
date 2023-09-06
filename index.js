@@ -8,10 +8,10 @@ inquirer.prompt([
   {
     type: "input",
     name: "fontName",
-    message: "请输入根目录下的字体文件名，仅支持ttf格式，如：font.ttf > ",
+    message: "请输入根目录下的字体文件名，仅支持ttf及otf格式，如：font.ttf > ",
     default: "font.ttf",
     validate: function (value) {
-      if (/^[^\\/:*?"<>|\r\n]+\.ttf$/.test(value)) {
+      if (/^[^\\/:*?"<>|\r\n]+\.(ttf|otf)$/.test(value)) {
         return true;
       }
       return "请输入正确的字体文件名";
